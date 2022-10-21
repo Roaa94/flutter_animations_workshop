@@ -7,5 +7,4 @@ List<Color> colors = [
   Colors.blueAccent,
   Colors.deepPurple,
   Colors.redAccent,
-  Colors.green.shade900,
 ];

@@ -10,21 +10,31 @@ class ColorPicker extends StatefulWidget {
 }
 
 class _ColorPickerState extends State<ColorPicker> {
-  int selectedColorIndex = 0;
+  int _selectedColorIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
-
     return Container(
       padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white, width: 0.5),
+      ),
       child: Wrap(
         spacing: 10,
         runSpacing: 10,
         children: List.generate(
           colors.length,
           (index) => ColorItem(
+            onTap: () {
+              setState(() {
+                _selectedColorIndex = index;
+              });
+            },
+            isSelected: _selectedColorIndex == index,
             color: colors[index],
+            size: 60,
           ),
         ),
       ),
