@@ -28,7 +28,7 @@ class _ColorPickerState extends State<ColorPicker> {
         scrollDirection: Axis.horizontal,
         itemCount: colors2.length,
         cacheExtent: 0,
-        itemBuilder: (context, index) => AnimatedScrollViewItem(
+        itemBuilder: (context, index) => ColorItemWrapper(
           child: ColorItem(
             onTap: () {
               setState(() {
@@ -45,8 +45,8 @@ class _ColorPickerState extends State<ColorPicker> {
   }
 }
 
-class AnimatedScrollViewItem extends StatefulWidget {
-  const AnimatedScrollViewItem({
+class ColorItemWrapper extends StatefulWidget {
+  const ColorItemWrapper({
     super.key,
     required this.child,
   });
@@ -54,10 +54,10 @@ class AnimatedScrollViewItem extends StatefulWidget {
   final Widget child;
 
   @override
-  State<AnimatedScrollViewItem> createState() => _AnimatedScrollViewItemState();
+  State<ColorItemWrapper> createState() => _ColorItemWrapperState();
 }
 
-class _AnimatedScrollViewItemState extends State<AnimatedScrollViewItem>
+class _ColorItemWrapperState extends State<ColorItemWrapper>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
