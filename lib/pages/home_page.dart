@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_workshop/pickers/3/color_picker.dart';
+import 'package:flutter_animations_workshop/pickers/4/color_picker.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
