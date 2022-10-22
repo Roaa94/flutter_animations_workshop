@@ -29,6 +29,12 @@ class _ColorPickerState extends State<ColorPicker>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GradientTransition(
       gradientStop: _gradientStopAnimation,

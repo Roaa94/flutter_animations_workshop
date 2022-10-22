@@ -49,6 +49,12 @@ class _ColorItemState extends State<ColorItem>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ScaleTransition(
       scale: _scaleAnimation,
